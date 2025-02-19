@@ -11,7 +11,7 @@ import { shouldShowModeratedNotification } from '../av-moderation/functions';
 import { setAudioMuted, setVideoMuted } from '../base/media/actions';
 import { MEDIA_TYPE, MediaType, VIDEO_MUTISM_AUTHORITY } from '../base/media/constants';
 import { muteRemoteParticipant } from '../base/participants/actions';
-import { getLocalParticipant, getRemoteParticipants } from '../base/participants/functions';
+import { getRemoteParticipants } from '../base/participants/functions';
 import { toggleScreensharing } from '../base/tracks/actions';
 import { isModerationNotificationDisplayed } from '../notifications/functions';
 
@@ -36,7 +36,7 @@ export function muteLocal(enable: boolean, mediaType: MediaType, stopScreenShari
         }
 
         // check for A/V Moderation when trying to unmute
-        if (!enable && shouldShowModeratedNotification(MEDIA_TYPE.AUDIO, getState())) {
+        if (isAudio && !enable && shouldShowModeratedNotification(MEDIA_TYPE.AUDIO, getState())) {
             if (!isModerationNotificationDisplayed(MEDIA_TYPE.AUDIO, getState())) {
                 dispatch(showModeratedNotification(MEDIA_TYPE.AUDIO));
             }
