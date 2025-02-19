@@ -73,9 +73,10 @@ jobs:
     - run: dpkg-buildpackage -A -rfakeroot -us -uc -d
     - name: List generated files
       run: ls -alh
+    - run: pwd
 #    - run: make source-package
     - name: Upload Debian package
       uses: actions/upload-artifact@v4
       with:
           name: debian-packages
-          path: "../*.deb"
+          path: "jitsi-meet/*.deb"
