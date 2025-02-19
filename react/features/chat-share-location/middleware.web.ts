@@ -1,7 +1,8 @@
 import {SHARE_LOCATION} from "./actionTypes";
 import MiddlewareRegistry from "../base/redux/MiddlewareRegistry";
 import {openChat, sendMessage} from "../chat/actions.web";
-import VideoLayout from "../../../modules/UI/videolayout/VideoLayout";
+// @ts-expect-error
+import VideoLayout from '../../../modules/UI/videolayout/VideoLayout';
 
 /**
  * The middleware of the feature chat-share-location specific to Web/React.
@@ -26,13 +27,20 @@ MiddlewareRegistry.register(store => next => action => {
             }
 
             _requestLocationPermission()
-                .then(position => {
+                .then((position: GeolocationPosition) => {
                     // Location permission granted.
-                    if (position && position.coords) {  // ✅ Check if position exists
-                        const { latitude, longitude, accuracy, altitude, altitudeAccuracy, heading, speed } = position.coords
+                    if (position && position.coords) {
+                        const {
+                            latitude,
+                            longitude,
+                            accuracy,
+                            altitude,
+                            altitudeAccuracy,
+                            heading,
+                            speed
+                        } = position.coords
 
-                        // Construct location message dynamically
-                        let messageText = `📍 My location is:`;
+                        messageText = `📍 My location is:`;
 
 
                         if (latitude !== null && latitude !== undefined) {
@@ -63,12 +71,10 @@ MiddlewareRegistry.register(store => next => action => {
                     } else {
                         dispatch(sendMessage("⚠️ Unable to retrieve location."));
                     }
-
-                    dispatch(sendMessage(messageText));
                 })
                 .catch(error => {
                     // Location permission denied or error occurred.
-                    messageText = "Location permission not granted: " + JSON.stringify(error);
+                    console.log("Location permission not granted: " + JSON.stringify(error));
                     dispatch(sendMessage("⚠️ Unable to retrieve location."));
                 });
             break;
@@ -91,7 +97,7 @@ const _requestLocationPermission = () => {
         navigator.geolocation.getCurrentPosition(
             (position) => resolve(position),
             (error) => reject(error),
-            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            {enableHighAccuracy: true, timeout: 10000, maximumAge: 0}
         );
     });
 };
