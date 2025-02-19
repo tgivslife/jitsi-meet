@@ -1,4 +1,4 @@
-import {SHARE_LOCATION} from "./actionTypes";
+import { SHARE_LOCATION } from './actionTypes';
 
 /**
  * Creates a (redux) action to signal that a click/tap has been performed on

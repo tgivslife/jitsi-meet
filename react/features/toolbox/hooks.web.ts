@@ -14,7 +14,7 @@ import { getLocalParticipant, hasRaisedHand } from '../base/participants/functio
 import { isToggleCameraEnabled } from '../base/tracks/functions.web';
 import { toggleChat } from '../chat/actions.web';
 import ChatButton from '../chat/components/web/ChatButton';
-import ChatShareLocationButton from "../chat-share-location/components/web/ChatShareLocationButton";
+import ChatShareLocationButton from '../chat-share-location/components/web/ChatShareLocationButton';
 import { useEmbedButton } from '../embed-meeting/hooks';
 import { useEtherpadButton } from '../etherpad/hooks';
 import { useFeedbackButton } from '../feedback/hooks.web';
@@ -102,7 +102,7 @@ const chatShareLocation = {
     key: 'chat-share-location',
     Content: ChatShareLocationButton,
     group: 2
-}
+};
 
 const desktop = {
     key: 'desktop',
@@ -214,6 +214,11 @@ function getFullscreenButton() {
     }
 }
 
+/**
+ * A hook that returns the share location button.
+ *
+ *  @returns {Object | undefined}
+ */
 function getChatShareLocationButton() {
     return chatShareLocation;
 }
@@ -303,7 +308,7 @@ export function useToolboxButtons(
     const feedback = useFeedbackButton();
     const _download = useDownloadButton();
     const _help = useHelpButton();
-    const chatShareLocation = getChatShareLocationButton();
+    const _chatShareLocation = getChatShareLocationButton();
 
     const buttons: { [key in ToolbarButton]?: IToolboxButton; } = {
         microphone,
@@ -311,7 +316,7 @@ export function useToolboxButtons(
         profile,
         desktop: dekstopSharing,
         chat,
-        'chat-share-location': chatShareLocation,
+        'chat-share-location': _chatShareLocation,
         raisehand,
         reactions,
         'participants-pane': participants,

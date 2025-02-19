@@ -1,11 +1,11 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {createToolbarEvent} from '../../../analytics/AnalyticsEvents';
-import {sendAnalytics} from '../../../analytics/functions';
-import {translate} from '../../../base/i18n/functions';
-import {IconShareLocation} from '../../../base/icons/svg';
-import AbstractButton, {IProps as AbstractButtonProps} from '../../../base/toolbox/components/AbstractButton';
-import {shareLocation} from "../../actions.any";
+import { createToolbarEvent } from '../../../analytics/AnalyticsEvents';
+import { sendAnalytics } from '../../../analytics/functions';
+import { translate } from '../../../base/i18n/functions';
+import { IconShareLocation } from '../../../base/icons/svg';
+import AbstractButton, { IProps as AbstractButtonProps } from '../../../base/toolbox/components/AbstractButton';
+import { shareLocation } from '../../actions.any';
 
 /**
  * Implementation of a button for sending location in chat as a message.
@@ -23,7 +23,7 @@ class ChatShareLocationButton extends AbstractButton<AbstractButtonProps> {
      * @returns {void}
      */
     _handleClick() {
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
 
         sendAnalytics(createToolbarEvent('chat-share-location'));
         dispatch(shareLocation());

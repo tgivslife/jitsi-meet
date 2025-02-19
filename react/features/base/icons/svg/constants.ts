@@ -79,6 +79,7 @@ import { default as IconSecurityOff } from './security-off.svg';
 import { default as IconSecurityOn } from './security-on.svg';
 import { default as IconSend } from './send.svg';
 import { default as IconShareDoc } from './share-doc.svg';
+import { default as IconShareLocation } from './share-location.svg';
 import { default as IconShare } from './share.svg';
 import { default as IconShortcuts } from './shortcuts.svg';
 import { default as IconSip } from './sip.svg';
@@ -106,7 +107,6 @@ import { default as IconWifi1Bar } from './wifi-1.svg';
 import { default as IconWifi2Bars } from './wifi-2.svg';
 import { default as IconWifi3Bars } from './wifi-3.svg';
 import { default as IconYahoo } from './yahoo.svg';
-import { default as IconShareLocation} from './share-location.svg';
 
 /**
  * Map containing the default icons.
