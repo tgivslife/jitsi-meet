@@ -2,6 +2,7 @@ import { ToolbarButton } from '../../toolbox/types';
 
 type ButtonsWithNotifyClick = 'camera' |
     'chat' |
+    'chat-share-location' |
     'closedcaptions' |
     'desktop' |
     'download' |

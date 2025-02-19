@@ -6,31 +6,31 @@ import { ToolbarButton } from './types';
 export const THRESHOLDS = [
     {
         width: 565,
-        order: [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'reactions', 'participants-pane', 'tileview' ]
+        order: [ 'microphone', 'camera', 'desktop', 'chat', 'chat-share-location', 'raisehand', 'reactions', 'participants-pane', 'tileview' ]
     },
     {
         width: 520,
-        order: [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'participants-pane', 'tileview' ]
+        order: [ 'microphone', 'camera', 'desktop', 'chat', 'chat-share-location', 'raisehand', 'participants-pane', 'tileview' ]
     },
     {
         width: 470,
-        order: [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'participants-pane' ]
+        order: [ 'microphone', 'camera', 'desktop', 'chat', 'chat-share-location', 'raisehand', 'participants-pane' ]
     },
     {
         width: 420,
-        order: [ 'microphone', 'camera', 'desktop', 'chat', 'participants-pane' ]
+        order: [ 'microphone', 'camera', 'desktop', 'chat', 'chat-share-location', 'participants-pane' ]
     },
     {
         width: 370,
-        order: [ 'microphone', 'camera', 'chat', 'participants-pane' ]
+        order: [ 'microphone', 'camera', 'chat', 'chat-share-location', 'participants-pane' ]
     },
     {
         width: 225,
-        order: [ 'microphone', 'camera', 'chat' ]
+        order: [ 'microphone', 'camera', 'chat', 'chat-share-location' ]
     },
     {
         width: 200,
-        order: [ 'microphone', 'camera' ]
+        order: [ 'microphone', 'camera', 'chat-share-location' ]
     }
 ];
 
@@ -43,6 +43,7 @@ export const MAIN_TOOLBAR_BUTTONS_PRIORITY = [
     'camera',
     'desktop',
     'chat',
+    'chat-share-location',
     'raisehand',
     'reactions',
     'participants-pane',
@@ -93,6 +94,7 @@ export const SPINNER_COLOR = '#929292';
 export const TOOLBAR_BUTTONS: ToolbarButton[] = [
     'camera',
     'chat',
+    'chat-share-location',
     'closedcaptions',
     'desktop',
     'download',
@@ -133,6 +135,7 @@ export const TOOLBAR_BUTTONS: ToolbarButton[] = [
  */
 export const VISITORS_MODE_BUTTONS: ToolbarButton[] = [
     'chat',
+    'chat-share-location',
     'closedcaptions',
     'hangup',
     'raisehand',

@@ -135,7 +135,8 @@
         },
         "title": "Chat",
         "titleWithPolls": "Chat and Polls",
-        "you": "you"
+        "you": "you",
+        "shareLocationButton": "Share location"
     },
     "chromeExtensionBanner": {
         "buttonText": "Install Chrome Extension",
@@ -1213,6 +1214,7 @@
             "carmode": "Car Mode",
             "cc": "Toggle subtitles",
             "chat": "Open / Close chat",
+            "chatShareLocation": "Share location",
             "clap": "Clap",
             "closeChat": "Close chat",
             "closeMoreActions": "Close more actions menu",
@@ -1302,6 +1304,7 @@
         "boo": "Boo",
         "callQuality": "Manage video quality",
         "chat": "Open / Close chat",
+        "chatShareLocation": "Share location",
         "clap": "Clap",
         "closeChat": "Close chat",
         "closeParticipantsPane": "Close participants pane",

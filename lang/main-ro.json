@@ -60,7 +60,8 @@
         "sendButton": "Trimiteți",
         "title": "Apel video",
         "titleWithPolls": "Apel video",
-        "you": ""
+        "you": "",
+        "shareLocationButton": "Partajare locație"
     },
     "chromeExtensionBanner": {
         "buttonText": "",
@@ -606,6 +607,7 @@
             "callQuality": "Gestionați calitatea apelului",
             "cc": "Comutați subtitrările",
             "chat": "Comutați ferestrele apelului video",
+            "chatShareLocation": "Partajare locație",
             "document": "Comutați documentele partajate",
             "download": "Descarcă aplicațiile noastre",
             "feedback": "Lăsați-ne feedback",
@@ -645,6 +647,7 @@
         "authenticate": "Autentificare",
         "callQuality": "Gestionați calitatea apelului",
         "chat": "Deschideți / Închideți conversația",
+        "chatShareLocation": "Partajare locație",
         "closeChat": "Închideți conversația",
         "documentClose": "Închideți document partajat",
         "documentOpen": "Deschideți document partajat",

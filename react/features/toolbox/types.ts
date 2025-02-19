@@ -10,6 +10,7 @@ export interface IToolboxButton {
 
 export type ToolbarButton = 'camera' |
     'chat' |
+    'chat-share-location' |
     'closedcaptions' |
     'desktop' |
     'download' |
