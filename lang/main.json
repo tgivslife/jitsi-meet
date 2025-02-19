@@ -733,7 +733,9 @@
     "me": "me",
     "notify": {
         "OldElectronAPPTitle": "Security vulnerability!",
-        "allowAction": "Allow",
+        "allowAudio": "Allow Audio",
+        "allowBoth": "Both",
+        "allowVideo": "Allow Video",
         "allowedUnmute": "You can unmute your microphone, start your camera or share your screen.",
         "audioUnmuteBlockedDescription": "Mic unmute operation has been temporarily blocked because of system limits.",
         "audioUnmuteBlockedTitle": "Mic unmute blocked!",
