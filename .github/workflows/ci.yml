@@ -1,6 +1,9 @@
 name: Simple CI
 
-on: [pull_request]
+on:
+    push:
+        tags:
+            - '*'
 
 jobs:
   lint:
