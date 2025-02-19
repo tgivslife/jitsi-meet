@@ -37,23 +37,23 @@ jobs:
     - name: Check if the git repository is clean
       run: $(exit $(git status --porcelain --untracked-files=no | head -255 | wc -l)) || (echo "Dirty git tree"; git diff; exit 1)
     - run: npm run lint:ci && npm run tsc:ci
-  linux-build:
-    name: Build Frontend (Linux)
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version-file: '.nvmrc'
-        cache: 'npm'
-    - name: Check Node / npm versions
-      run: |
-        node -v
-        npm -v
-    - run: npm install
-    - run: make
+#  linux-build:
+#    name: Build Frontend (Linux)
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v4
+#    - uses: actions/setup-node@v4
+#      with:
+#        node-version-file: '.nvmrc'
+#        cache: 'npm'
+#    - name: Check Node / npm versions
+#      run: |
+#        node -v
+#        npm -v
+#    - run: npm install
+#    - run: make
   debian-build:
-    name: Test Debian packages build
+    name: Debian packages build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -70,3 +70,8 @@ jobs:
     - run: sudo apt-get install -y debhelper
     - run: dpkg-buildpackage -A -rfakeroot -us -uc -d
     - run: make source-package
+    - name: Upload Debian package
+      uses: actions/upload-artifact@v3
+      with:
+          name: debian-packages
+          path: "*.deb"
